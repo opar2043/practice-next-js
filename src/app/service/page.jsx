@@ -1,10 +1,15 @@
 'use client'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
+import { Roboto} from "next/font/google";
+export const roboto = Roboto({
+  weight: ['400' ],
+  subsets: ['latin']
+})
 
 const Service = () => {
 
-  const [user , setUser] = useState()
+  const [user , setUser] = useState([])
   useEffect(()=>{
     fetch('https://jsonplaceholder.typicode.com/users')
     .then(res => res.json())
@@ -14,7 +19,7 @@ const Service = () => {
   },[])
 
   return (
-    <div  className='grid grid-cols-1 md:grid-cols-3 gap-4 p-4'>
+    <div  className={`grid grid-cols-1 md:grid-cols-3 gap-4 p-4 ${roboto.className}`}>
       {
         user?.map(us => <div key={us.id} className='border border-white rounded-md p-4' >
           <p>     
