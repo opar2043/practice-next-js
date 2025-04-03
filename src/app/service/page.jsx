@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import { Roboto} from "next/font/google";
+
 export const roboto = Roboto({
   weight: ['400' ],
   subsets: ['latin']
@@ -16,7 +17,7 @@ const Service = () => {
     .then(data => {
       setUser(data)
     })
-  },[])
+  },[]);
 
   return (
     <div  className={`grid grid-cols-1 md:grid-cols-3 gap-4 p-4 ${roboto.className}`}>
