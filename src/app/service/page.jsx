@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import { Roboto} from "next/font/google";
+import { redirect } from 'next/navigation';
 
 export const roboto = Roboto({
   weight: ['400' ],
@@ -18,6 +19,11 @@ const Service = () => {
       setUser(data)
     })
   },[]);
+
+
+  // if(data.length > 3){
+  //   redirect('/')
+  // }
 
   return (
     <div  className={`grid grid-cols-1 md:grid-cols-3 gap-4 p-4 ${roboto.className}`}>

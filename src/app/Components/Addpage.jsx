@@ -1,7 +1,10 @@
 "use client"
+import { useRouter } from 'next/navigation';
 import React from 'react'
 
 const Addpage = () => {
+
+  const router = useRouter();
 
    async function handleAdd(e){
       e.preventDefault();
@@ -20,6 +23,7 @@ const Addpage = () => {
 
       const result = await res.json(); 
       console.log(result);
+      router.push('/products')
     }
 
   return (
